@@ -23,18 +23,38 @@ public class RecipeLoader_02 {
 
     public static void RecipeLoad(){
 
+        // 1234
+        // Compact MK1 Fusion Disassembly Recipe
         GT_Values.RA.addAssemblerRecipe(
             new ItemStack[]{
-                GT_OreDictUnificator.get(OrePrefixes.pipeLarge, Materials.StainlessSteel,1),
-                GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.BlueAlloy,1),
-                GT_OreDictUnificator.get(OrePrefixes.wireGt01, Materials.SuperconductorHV,32),
-                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Beryllium,32),
-                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite,1)
+                ItemRefer.Compact_Fusion_Coil_T0.get(1)
             },
             null,
-            ItemRefer.Speeding_Pipe.get(1),
-            300,
-            1920
+            ItemList.Casing_Coil_Superconductor.get(1),
+            600,
+            120000
+        );
+
+        // Compact MK2 Fusion Disassembly Recipe
+        GT_Values.RA.addAssemblerRecipe(
+            new ItemStack[]{
+                ItemRefer.Compact_Fusion_Coil_T1.get(1),
+            },
+            null,
+            ItemList.Casing_Fusion_Coil.get(1),
+            600,
+            480000
+        );
+
+        // Compact MK2 Fusion Disassembly Recipe
+        GT_Values.RA.addAssemblerRecipe(
+            new ItemStack[]{
+                ItemRefer.Compact_Fusion_Coil_T2.get(1),
+            },
+            null,
+            ItemList.Casing_Fusion_Coil.get(1),
+            600,
+            1920000
         );
 
         CrackRecipeAdder.reAddBlastRecipe(MyMaterial.zircaloy2, 500, 480, 2800, true);
@@ -1312,7 +1332,7 @@ public class RecipeLoader_02 {
         if (LoadedList.GTPP) {
             MyRecipeAdder.instance.addPreciseAssemblerRecipe(
                 new ItemStack[] {
-                    GT_ModHandler.getModItem("miscutils", "gtplusplus.blockcasings.6", 3, 1),
+                    GT_ModHandler.getModItem("miscutils", "gtplusplus.blockcasings.3", 3, 13),
                     ItemRefer.HiC_T5.get(1),
                     GT_ModHandler.getModItem("miscutils", "item.itemBufferCore4", 1),
                 },
@@ -1326,28 +1346,39 @@ public class RecipeLoader_02 {
                 3
             );
 
+            // Compact MK4 Fusion Disassembly Recipe
+            GT_Values.RA.addAssemblerRecipe(
+                new ItemStack[]{
+                    ItemRefer.Compact_Fusion_Coil_T3.get(1),
+                },
+                null,
+                GT_ModHandler.getModItem("miscutils", "gtplusplus.blockcasings.3", 1, 13),
+                600,
+                7680000
+            );
+
             int tID = GregTech_API.METATILEENTITIES[31076] != null ? 31076 : 965;
 
-//             GT_Values.RA.addAssemblylineRecipe(
-//                     ItemRefer.Compact_Fusion_MK3.get(1),
-//                     24000,
-//                     new Object[] {
-//                             GT_ModHandler.getModItem("gregtech", "gt.blockmachines", 48, tID),
-//                             GT_OreDictUnificator.get(OrePrefixes.wireGt08, Materials.SuperconductorLuV, 32),
-//                             ItemList.Circuit_Wafer_PPIC.get(64),
-//                             ItemList.UHV_Coil.get(16),
-//                             ItemRefer.Compact_Fusion_Coil_T2.get(8),
-//                             ItemRefer.HiC_T4.get(8)
-//                     },
-//                     new FluidStack[] {
-//                             FluidRegistry.getFluidStack("molten.teflon", 1152),
-//                             MyMaterial.dalisenite.getMolten(576),
-//                             FluidRegistry.getFluidStack("molten.botmium", 288)
-//                     },
-//                     ItemRefer.Compact_Fusion_MK4.get(1),
-//                     6000,
-//                     520000
-//             );
+             GT_Values.RA.addAssemblylineRecipe(
+                     ItemRefer.Compact_Fusion_MK3.get(1),
+                     24000,
+                     new Object[] {
+                             GT_ModHandler.getModItem("gregtech", "gt.blockmachines", 48, tID),
+                             GT_OreDictUnificator.get(OrePrefixes.wireGt08, Materials.SuperconductorLuV, 32),
+                             ItemList.Circuit_Wafer_PPIC.get(64),
+                             ItemList.UHV_Coil.get(16),
+                             ItemRefer.Compact_Fusion_Coil_T2.get(8),
+                             ItemRefer.HiC_T4.get(8)
+                     },
+                     new FluidStack[] {
+                             FluidRegistry.getFluidStack("molten.teflon", 1152),
+                             MyMaterial.dalisenite.getMolten(576),
+                             FluidRegistry.getFluidStack("molten.botmium", 288)
+                     },
+                     ItemRefer.Compact_Fusion_MK4.get(1),
+                     6000,
+                     520000
+             );
 
 //            MyRecipeAdder.instance.addPreciseAssemblerRecipe(
 //                    new ItemStack[] {
@@ -1366,26 +1397,27 @@ public class RecipeLoader_02 {
 //                    3
 //            );
 
-            GT_Values.RA.addAssemblylineRecipe(
-                ItemRefer.Compact_Fusion_MK4.get(1),
-                24000,
-                new Object[] {
-                    GT_ModHandler.getModItem("gregtech", "gt.blockmachines", 48, 965),
-                    GT_OreDictUnificator.get(OrePrefixes.wireGt08, Materials.SuperconductorUV, 32),
-                    ItemList.Circuit_Wafer_QPIC.get(64),
-                    ItemList.UHV_Coil.get(64),
-                    ItemRefer.Compact_Fusion_Coil_T3.get(8),
-                    ItemRefer.HiC_T5.get(8)
-                },
-                new FluidStack[] {
-                    MyMaterial.tairitsu.getMolten( 1152),
-                    MyMaterial.artheriumSn.getMolten(576),
-                    FluidRegistry.getFluidStack("molten.rhugnor", 288)
-                },
-                ItemRefer.Compact_Fusion_MK5.get(1),
-                6000,
-                1100000
-            );
+            // Compact MK5 Computer
+//            GT_Values.RA.addAssemblylineRecipe(
+//                ItemRefer.Compact_Fusion_MK4.get(1),
+//                24000,
+//                new Object[] {
+//                    GT_ModHandler.getModItem("gregtech", "gt.blockmachines", 48, 965),
+//                    GT_OreDictUnificator.get(OrePrefixes.wireGt08, Materials.SuperconductorUV, 32),
+//                    ItemList.Circuit_Wafer_QPIC.get(64),
+//                    ItemList.UHV_Coil.get(64),
+//                    ItemRefer.Compact_Fusion_Coil_T3.get(8),
+//                    ItemRefer.HiC_T5.get(8)
+//                },
+//                new FluidStack[] {
+//                    MyMaterial.tairitsu.getMolten( 1152),
+//                    MyMaterial.artheriumSn.getMolten(576),
+//                    FluidRegistry.getFluidStack("molten.rhugnor", 288)
+//                },
+//                ItemRefer.Compact_Fusion_MK5.get(1),
+//                6000,
+//                1100000
+//            );
         }
 
         GT_Values.RA.addMultiblockChemicalRecipe(
